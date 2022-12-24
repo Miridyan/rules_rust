@@ -270,7 +270,7 @@ cargo_bootstrap_repository = repository_rule(
                 "`{system}` (eg. 'darwin'), `{channel}` (eg. 'stable'), and `{tool}` (eg. 'rustc.exe') will be " +
                 "replaced in the string if present."
             ),
-            default = "@rust_{system}_{arch}__{triple}__{channel}_tools//:bin/{tool}",
+            default = rust_common.default_tool_template,
         ),
         "rust_toolchain_rustc_template": attr.string(
             doc = (
@@ -279,7 +279,7 @@ cargo_bootstrap_repository = repository_rule(
                 "`{system}` (eg. 'darwin'), `{channel}` (eg. 'stable'), and `{tool}` (eg. 'rustc.exe') will be " +
                 "replaced in the string if present."
             ),
-            default = "@rust_{system}_{arch}__{triple}__{channel}_tools//:bin/{tool}",
+            default = rust_common.default_tool_template,
         ),
         "srcs": attr.label_list(
             doc = "Souce files of the crate to build. Passing source files here can be used to trigger rebuilds when changes are made",

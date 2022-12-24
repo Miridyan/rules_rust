@@ -267,7 +267,7 @@ that is called behind the scenes to update dependencies.
                 "`{system}` (eg. 'darwin'), `{cfg}` (eg. 'exec'), `{channel}` (eg. 'stable'), and `{tool}` (eg. " +
                 "'rustc.exe') will be replaced in the string if present."
             ),
-            default = "@rust_{system}_{arch}__{triple}__{channel}_tools//:bin/{tool}",
+            default = rust_common.default_tool_template,
         ),
         "rust_toolchain_rustc_template": attr.string(
             doc = (
@@ -276,7 +276,7 @@ that is called behind the scenes to update dependencies.
                 "`{system}` (eg. 'darwin'), `{cfg}` (eg. 'exec'), `{channel}` (eg. 'stable'), and `{tool}` (eg. " +
                 "'cargo.exe') will be replaced in the string if present."
             ),
-            default = "@rust_{system}_{arch}__{triple}__{channel}_tools//:bin/{tool}",
+            default = rust_common.default_tool_template,
         ),
         "rust_version": attr.string(
             doc = "The version of Rust the currently registered toolchain is using. Eg. `1.56.0`, or `nightly/2021-09-08`",

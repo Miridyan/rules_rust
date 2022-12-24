@@ -35,6 +35,8 @@ DEFAULT_RUST_VERSION = "1.66.0"
 
 DEFAULT_NIGHTLY_ISO_DATE = "2022-12-15"
 
+DEFAULT_TOOL_TEMPLATE = "@rust_{system}_{arch}__{triple}__{channel}_tools//:bin/{tool}"
+
 def _create_crate_info(**kwargs):
     """A constructor for a `CrateInfo` provider
 
@@ -62,4 +64,5 @@ rust_common = struct(
     stdlib_info = StdLibInfo,
     test_crate_info = TestCrateInfo,
     default_version = DEFAULT_RUST_VERSION,
+    default_tool_template = DEFAULT_TOOL_TEMPLATE,
 )
